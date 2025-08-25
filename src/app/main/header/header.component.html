@@ -1,0 +1,26 @@
+<mat-toolbar class="header">
+    <span><img src="../../../assets/Images/Logo.jpg" alt="moba" style="margin-top:5px;" ></span>
+    <mat-nav-list class="list-horizontal">
+       <button mat-button color="basic" routerLink="home">Home</button>
+       <button mat-button color="basic" routerLink="dashboard">Dashboard</button>
+       <button mat-button color="basic" routerLink="contact">Contact</button>
+    </mat-nav-list>
+    
+    <button mat-icon-button [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger" class="user_icon" (mouseover)="menuTrigger.openMenu()">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" [overlapTrigger]="false" yPosition="below">
+        <span (mouseleave)="menuTrigger.closeMenu()">
+          <button mat-menu-item routerLink="profile">
+                <mat-icon>perm_identity</mat-icon>
+                <span>Profile</span>
+              </button>
+          <button mat-menu-item>
+                <mat-icon>exit_to_app</mat-icon>
+                <span>Logout</span>
+          </button>
+        </span>
+    </mat-menu>
+    
+</mat-toolbar>
+

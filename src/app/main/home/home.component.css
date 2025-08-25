@@ -1,0 +1,11 @@
+.content{
+    display: flex;
+    gap:25px;
+    margin-top: 10px;
+}
+.filter{
+    padding: 10px 28px;
+}
+.selection{
+    margin-top: 2em;
+}

@@ -1,0 +1,23 @@
+.mat-toolbar{
+ background-color: #383838;
+}
+
+.list-horizontal{
+    display: flex;
+    gap:20px;
+    padding: 20px;
+    color:rgb(210, 210, 42);
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100% !important;
+}
+.user_icon{
+    color:rgb(210, 210, 42);
+    position: relative;
+    left: 61%;
+    transform: scale(1.4);
+}

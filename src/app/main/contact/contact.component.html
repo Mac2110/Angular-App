@@ -1,0 +1,137 @@
+<mat-card-content class="content">
+    <!-- ------------- 1st Card ---------------- -->
+    <mat-card class="card">
+        <mat-card-content class="row">
+            <h3>Bounce Rate</h3><mat-icon fontIcon="star" style="margin-left:20px;"></mat-icon>
+        </mat-card-content>
+        <mat-card-content class="row">
+            <h2>5</h2><button mat-button basic style="margin-left:83px;"><mat-icon fontIcon="arrow_forward"></mat-icon></button>
+        </mat-card-content>
+    </mat-card>
+
+     <!-- ------------- 2nd Card ---------------- -->
+    <mat-card class="card">
+        <mat-card-content class="row">
+            <h3>Conversion Rate</h3><mat-icon fontIcon="star"></mat-icon>
+        </mat-card-content>
+        <mat-card-content class="row">
+            <h2>3</h2><button mat-button basic style="margin-left:91px;"><mat-icon fontIcon="arrow_forward"></mat-icon></button>
+        </mat-card-content>
+    </mat-card>
+
+    <!-- ------------- 3rd Card ---------------- -->
+    <mat-card class="card">
+        <mat-card-content class="row">
+            <h3>Engagement Rate</h3><mat-icon fontIcon="star"></mat-icon>
+        </mat-card-content>
+        <mat-card-content class="row">
+            <h2>8/50</h2><button mat-button basic style="margin-left:69px;"><mat-icon fontIcon="arrow_forward"></mat-icon></button>
+        </mat-card-content>
+    </mat-card>
+
+    <!-- ------------- 4th Card ---------------- -->
+    <mat-card class="card">
+        <mat-card-content class="row">
+            <h3>Impression Rate</h3><mat-icon fontIcon="star"></mat-icon>
+        </mat-card-content>
+        <mat-card-content class="row">
+            <h2>2</h2><button mat-button basic style="margin-left:90px;"><mat-icon fontIcon="arrow_forward"></mat-icon></button>
+        </mat-card-content>
+    </mat-card>
+</mat-card-content>
+
+<!-- --------------------------Form Details------------------------- -->
+
+<div class="container">
+<mat-card-content style="width:45em;padding: 2px">
+<mat-card class="form-card">
+    <h2>Contact Details</h2>
+    <form [formGroup]="formdetails" (ngSubmit)="onSubmit()">
+
+        <mat-form-field appearance="outline" [style.width.px]=570>
+            <mat-label>Enter Your Full Name</mat-label>
+            <input matInput type="text" formControlName="fullname">
+            <mat-error style="color: red;" *ngIf="formdetails.get('fullname').touched && formdetails.get('fullname').errors?.required">
+                Fullname is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" [style.width.px]=280>
+            <mat-label>Enter Your Email</mat-label>
+            <input matInput type="text" formControlName="email" >
+            <mat-error style="color: red;" *ngIf="formdetails.get('email').touched && formdetails.get('email').errors?.required">
+                Email is required
+            </mat-error>
+            <mat-error style="color: red;" *ngIf="formdetails.get('email').errors?.email">
+                Email is invalid
+            </mat-error>
+        </mat-form-field>&nbsp;&nbsp;
+        
+        <mat-form-field appearance="outline" [style.width.px]=280>
+            <mat-label>Enter Your Phone Number</mat-label>
+            <input matInput type="number" formControlName="number">
+            <mat-error style="color: red;" *ngIf="formdetails.get('number').touched && formdetails.get('number').errors?.required">
+                Phone number is required
+            </mat-error>
+            <mat-error style="color: red;" *ngIf="formdetails.get('number').errors?.pattern">
+                Please, Enter 10 digit mobile number
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" [style.width.px]=280 >
+            <mat-label>Select Gender</mat-label>
+            <mat-select [(value)]="selected" formControlName="gender">
+              <mat-option value="male">Male</mat-option>
+              <mat-option value="female">Female</mat-option>
+            </mat-select>
+            <mat-error style="color: red;" *ngIf="formdetails.get('gender').touched && formdetails.get('gender').errors?.required">
+                Gender is required
+            </mat-error>
+        </mat-form-field>&nbsp;&nbsp;
+
+        <mat-form-field appearance="outline" [style.width.px]=280> 
+            <mat-label>Date of Birth</mat-label> 
+            <input matInput [matDatepicker]="picker" formControlName="dob"> 
+            <mat-datepicker-toggle matSuffix [for]="picker"> 
+              </mat-datepicker-toggle> 
+            <mat-datepicker #picker></mat-datepicker> 
+            <mat-error style="color: red;" *ngIf="formdetails.get('dob').touched && formdetails.get('dob').errors?.required">
+                Dob is required
+            </mat-error>
+        </mat-form-field> 
+       
+        <mat-form-field appearance="outline" [style.width.px]=570>
+            <mat-label>Enter Your Address</mat-label>
+            <input matInput type="text" formControlName="address" >
+            <mat-error style="color: red;" *ngIf="formdetails.get('address').touched && formdetails.get('address').errors?.required">
+                Address is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" [style.width.px]=280>
+            <mat-label>PostCode</mat-label>
+            <input matInput type="number" formControlName="postcode" >
+            <mat-error style="color: red;" *ngIf="formdetails.get('postcode').touched && formdetails.get('postcode').errors?.required">
+                PostCode is required
+            </mat-error>
+            <mat-error style="color: red;" *ngIf="formdetails.get('postcode').errors?.pattern">
+                Please, Enter 6 digit postcode
+            </mat-error>
+        </mat-form-field>&nbsp;&nbsp;
+
+        <mat-form-field appearance="outline" [style.width.px]=280>
+            <mat-label>Enter Your City</mat-label>
+            <input matInput type="text" formControlName="city" >
+            <mat-error style="color: red;" *ngIf="formdetails.get('city').touched && formdetails.get('city').errors?.required">
+                City is required
+            </mat-error>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary">Submit</button>
+    </form>
+</mat-card>
+</mat-card-content>
+<mat-card>
+ <app-geography-map></app-geography-map>
+</mat-card>
+</div>

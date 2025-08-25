@@ -1,0 +1,5 @@
+.toolbar{
+    display: flex;
+    gap:5px;
+    width: 190px;
+}

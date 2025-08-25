@@ -1,0 +1,11 @@
+.card{
+   width: 53em;
+   height: 10em;
+   display: flex;
+   gap:1em
+}
+.flex{
+   display: flex;
+   margin-left: 1em;
+   overflow: hidden;
+}
